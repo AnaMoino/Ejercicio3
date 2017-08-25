@@ -1,15 +1,40 @@
-<html ng-app>
+<html ng-app="ej3_2">
     <head>
-        <title>Demo MP</title>
+        <title>Ejercicio 3.2</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/controller.js"></script>
     </head>
     <body>
-        <div id="demo">
-            <h1>Demo angular</h1>
-            <input type="text" ng-model="simpleModel" placeholder="Hola mundo" />
-            <h1>{{simpleModel}}</h1>
+        <div id="pokemon" ng-controller="pokeController">
+            <h1>Pokemon Facts</h1>
+            <div>
+                <h3>Ingresa el nombre de tu pokemon favorito</h3>
+                <input type="text" ng-model="search" placeholder="pokemon" />
+            </div>
+            <button type="button" ng-click="getPokemon()">Buscar</button>
+          
+            <div>
+                    <h1>{{pokeFacts.name}}</h1>
+            </div> 
+            <h2>Caracteristicas</h2>
+            <div>
+               Nombre: <label>{{pokeFacts.name}}</label><br/>
+               Peso: <label>{{pokeFacts.weight}}</label><br/>
+               Altura: <label>{{pokeFacts.height}}</label><br/>
+               Experiencia Base: <label>{{pokeFacts.base_experience}}</label><br/>  
+            </div>
+             <h2>Categorias</h2>
+            <div>
+               <ul ng-repeat="cat in pokeFacts.types">
+
+                <li><label>{{cat.type.name}}</label> - <a ng-href="{{cat.type.url}}" target="_blank">Ver en pokeapi</a></li>
+
+            </ul>
+            </div>
+         
         </div>
     </body>
 </html>

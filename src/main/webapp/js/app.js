@@ -1,0 +1,1 @@
+angular.module('ej3_2', ['ej3_2.controller']);
