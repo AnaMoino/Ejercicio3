@@ -3,4 +3,5 @@ function readOS(){
    txt += "User-agent header: " + navigator.userAgent;
    
     $("#result2").text(txt);
+    console.log(txt);
 }

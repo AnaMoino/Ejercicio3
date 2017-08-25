@@ -10,5 +10,6 @@ txt += " Browser Online: " + navigator.onLine;
 txt += " Platform: " + navigator.platform;
     
           $("#result").text(txt);   
+          console.log(txt);
           readOS();
 }
